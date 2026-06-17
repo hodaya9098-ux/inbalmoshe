@@ -24,27 +24,372 @@
   <main class="page-main">
     <div class="page-header">
       <h2>סגנונות ציפורניים</h2>
-      <p class="section-subtitle">לחצי על הסגנון שאת אוהבת</p>
+      <p class="section-subtitle">בחרי את הסגנון שמתאים לך</p>
     </div>
 
-    <div class="styles-grid">
-      <div class="style-card" onclick="selectStyle('French', this)">
-        <img src="french.png" alt="French Style">
-        <p>French</p>
-      </div>
-      <div class="style-card" onclick="selectStyle('Glitter', this)">
-        <img src="glitter.png" alt="Glitter Style">
-        <p>Glitter</p>
-      </div>
-      <div class="style-card" onclick="selectStyle('Colorful', this)">
-        <img src="colorful.png" alt="Colorful Style">
-        <p>Colorful</p>
+    <div id="chosenBanner" class="chosen-banner hidden">
+      <span id="chosenStyle"></span>
+      <a href="booking.html" class="chosen-cta">קבעי תור עם הסגנון הזה ←</a>
+    </div>
+
+    <!-- ===== קלאסי ===== -->
+    <div class="style-category">
+      <h3 class="cat-title">✨ קלאסי</h3>
+      <div class="styles-grid-new">
+
+        <div class="style-card-new" onclick="selectStyle('French Classic', this)">
+          <div class="nail-preview">
+            <div class="nail french"></div>
+            <div class="nail french"></div>
+            <div class="nail french tall"></div>
+            <div class="nail french"></div>
+            <div class="nail french short"></div>
+          </div>
+          <p class="sname">French Classic</p>
+          <p class="sdesc">לבן טבעי ואלגנטי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Red Classic', this)">
+          <div class="nail-preview">
+            <div class="nail red"></div>
+            <div class="nail red"></div>
+            <div class="nail red tall"></div>
+            <div class="nail red"></div>
+            <div class="nail red short"></div>
+          </div>
+          <p class="sname">Red Classic</p>
+          <p class="sdesc">אדום קלאסי עז</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Nude Natural', this)">
+          <div class="nail-preview">
+            <div class="nail nude"></div>
+            <div class="nail nude"></div>
+            <div class="nail nude tall"></div>
+            <div class="nail nude"></div>
+            <div class="nail nude short"></div>
+          </div>
+          <p class="sname">Nude Natural</p>
+          <p class="sdesc">בז׳ עדין וטבעי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Black Matte', this)">
+          <div class="nail-preview">
+            <div class="nail black"></div>
+            <div class="nail black"></div>
+            <div class="nail black tall"></div>
+            <div class="nail black"></div>
+            <div class="nail black short"></div>
+          </div>
+          <p class="sname">Black Matte</p>
+          <p class="sdesc">שחור מאט דרמטי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Burgundy Wine', this)">
+          <div class="nail-preview">
+            <div class="nail burgundy"></div>
+            <div class="nail burgundy"></div>
+            <div class="nail burgundy tall"></div>
+            <div class="nail burgundy"></div>
+            <div class="nail burgundy short"></div>
+          </div>
+          <p class="sname">Burgundy Wine</p>
+          <p class="sdesc">יין כהה ומושך</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Pure White', this)">
+          <div class="nail-preview">
+            <div class="nail white"></div>
+            <div class="nail white"></div>
+            <div class="nail white tall"></div>
+            <div class="nail white"></div>
+            <div class="nail white short"></div>
+          </div>
+          <p class="sname">Pure White</p>
+          <p class="sdesc">לבן נקי מודרני</p>
+        </div>
+
       </div>
     </div>
 
-    <p id="chosenStyle" class="chosen-style"></p>
-    <div class="page-action">
-      <a href="booking.html" class="btn-action">קבעי תור עם הסגנון הנבחר ←</a>
+    <!-- ===== פסטל ===== -->
+    <div class="style-category">
+      <h3 class="cat-title">🌸 פסטל</h3>
+      <div class="styles-grid-new">
+
+        <div class="style-card-new" onclick="selectStyle('Baby Pink', this)">
+          <div class="nail-preview">
+            <div class="nail baby-pink"></div>
+            <div class="nail baby-pink"></div>
+            <div class="nail baby-pink tall"></div>
+            <div class="nail baby-pink"></div>
+            <div class="nail baby-pink short"></div>
+          </div>
+          <p class="sname">Baby Pink</p>
+          <p class="sdesc">ורוד רך ונשי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Baby Blue', this)">
+          <div class="nail-preview">
+            <div class="nail baby-blue"></div>
+            <div class="nail baby-blue"></div>
+            <div class="nail baby-blue tall"></div>
+            <div class="nail baby-blue"></div>
+            <div class="nail baby-blue short"></div>
+          </div>
+          <p class="sname">Baby Blue</p>
+          <p class="sdesc">כחול תינוק עדין</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Lavender', this)">
+          <div class="nail-preview">
+            <div class="nail lavender"></div>
+            <div class="nail lavender"></div>
+            <div class="nail lavender tall"></div>
+            <div class="nail lavender"></div>
+            <div class="nail lavender short"></div>
+          </div>
+          <p class="sname">Lavender</p>
+          <p class="sdesc">סגול לבנדר שקט</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Mint Green', this)">
+          <div class="nail-preview">
+            <div class="nail mint"></div>
+            <div class="nail mint"></div>
+            <div class="nail mint tall"></div>
+            <div class="nail mint"></div>
+            <div class="nail mint short"></div>
+          </div>
+          <p class="sname">Mint Green</p>
+          <p class="sdesc">ירוק מנטה טרי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Peach Cream', this)">
+          <div class="nail-preview">
+            <div class="nail peach"></div>
+            <div class="nail peach"></div>
+            <div class="nail peach tall"></div>
+            <div class="nail peach"></div>
+            <div class="nail peach short"></div>
+          </div>
+          <p class="sname">Peach Cream</p>
+          <p class="sdesc">אפרסק קרמי חם</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Lilac Dream', this)">
+          <div class="nail-preview">
+            <div class="nail lilac"></div>
+            <div class="nail lilac"></div>
+            <div class="nail lilac tall"></div>
+            <div class="nail lilac"></div>
+            <div class="nail lilac short"></div>
+          </div>
+          <p class="sname">Lilac Dream</p>
+          <p class="sdesc">לילך חלומי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Coral Reef', this)">
+          <div class="nail-preview">
+            <div class="nail coral"></div>
+            <div class="nail coral"></div>
+            <div class="nail coral tall"></div>
+            <div class="nail coral"></div>
+            <div class="nail coral short"></div>
+          </div>
+          <p class="sname">Coral Reef</p>
+          <p class="sdesc">קורל שמח וחי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Rose Taupe', this)">
+          <div class="nail-preview">
+            <div class="nail rose-taupe"></div>
+            <div class="nail rose-taupe"></div>
+            <div class="nail rose-taupe tall"></div>
+            <div class="nail rose-taupe"></div>
+            <div class="nail rose-taupe short"></div>
+          </div>
+          <p class="sname">Rose Taupe</p>
+          <p class="sdesc">ורוד-אפור עמוק</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== אומברה ===== -->
+    <div class="style-category">
+      <h3 class="cat-title">🌅 אומברה</h3>
+      <div class="styles-grid-new">
+
+        <div class="style-card-new" onclick="selectStyle('Sunset Ombre', this)">
+          <div class="nail-preview">
+            <div class="nail sunset"></div>
+            <div class="nail sunset"></div>
+            <div class="nail sunset tall"></div>
+            <div class="nail sunset"></div>
+            <div class="nail sunset short"></div>
+          </div>
+          <p class="sname">Sunset Ombre</p>
+          <p class="sdesc">שקיעה כתומה-ורודה</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Ocean Blue', this)">
+          <div class="nail-preview">
+            <div class="nail ocean"></div>
+            <div class="nail ocean"></div>
+            <div class="nail ocean tall"></div>
+            <div class="nail ocean"></div>
+            <div class="nail ocean short"></div>
+          </div>
+          <p class="sname">Ocean Blue</p>
+          <p class="sdesc">כחול ים וטורקיז</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Rose Gold', this)">
+          <div class="nail-preview">
+            <div class="nail rose-gold"></div>
+            <div class="nail rose-gold"></div>
+            <div class="nail rose-gold tall"></div>
+            <div class="nail rose-gold"></div>
+            <div class="nail rose-gold short"></div>
+          </div>
+          <p class="sname">Rose Gold</p>
+          <p class="sdesc">ורוד-זהב מנצנץ</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Berry Bliss', this)">
+          <div class="nail-preview">
+            <div class="nail berry"></div>
+            <div class="nail berry"></div>
+            <div class="nail berry tall"></div>
+            <div class="nail berry"></div>
+            <div class="nail berry short"></div>
+          </div>
+          <p class="sname">Berry Bliss</p>
+          <p class="sdesc">סגול-ורוד עסיסי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Rainbow Colorful', this)">
+          <div class="nail-preview">
+            <div class="nail r1"></div>
+            <div class="nail r2"></div>
+            <div class="nail r3 tall"></div>
+            <div class="nail r4"></div>
+            <div class="nail r5 short"></div>
+          </div>
+          <p class="sname">Rainbow</p>
+          <p class="sdesc">צבעוני ושמח</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== מיוחד ===== -->
+    <div class="style-category">
+      <h3 class="cat-title">💎 מיוחד</h3>
+      <div class="styles-grid-new">
+
+        <div class="style-card-new" onclick="selectStyle('Marble', this)">
+          <div class="nail-preview">
+            <div class="nail marble"></div>
+            <div class="nail marble"></div>
+            <div class="nail marble tall"></div>
+            <div class="nail marble"></div>
+            <div class="nail marble short"></div>
+          </div>
+          <p class="sname">Marble</p>
+          <p class="sdesc">שיש לבן-אפור</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Gold Chrome', this)">
+          <div class="nail-preview">
+            <div class="nail gold"></div>
+            <div class="nail gold"></div>
+            <div class="nail gold tall"></div>
+            <div class="nail gold"></div>
+            <div class="nail gold short"></div>
+          </div>
+          <p class="sname">Gold Chrome</p>
+          <p class="sdesc">זהב מטאלי נוצץ</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Holographic', this)">
+          <div class="nail-preview">
+            <div class="nail holo"></div>
+            <div class="nail holo"></div>
+            <div class="nail holo tall"></div>
+            <div class="nail holo"></div>
+            <div class="nail holo short"></div>
+          </div>
+          <p class="sname">Holographic</p>
+          <p class="sdesc">קשת הולוגרפית</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Pink Glitter', this)">
+          <div class="nail-preview">
+            <div class="nail glitter"></div>
+            <div class="nail glitter"></div>
+            <div class="nail glitter tall"></div>
+            <div class="nail glitter"></div>
+            <div class="nail glitter short"></div>
+          </div>
+          <p class="sname">Pink Glitter</p>
+          <p class="sdesc">נצנצים ורודים</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Galaxy', this)">
+          <div class="nail-preview">
+            <div class="nail galaxy"></div>
+            <div class="nail galaxy"></div>
+            <div class="nail galaxy tall"></div>
+            <div class="nail galaxy"></div>
+            <div class="nail galaxy short"></div>
+          </div>
+          <p class="sname">Galaxy</p>
+          <p class="sdesc">גלקסי כוכבים</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Leopard Print', this)">
+          <div class="nail-preview">
+            <div class="nail leopard"></div>
+            <div class="nail leopard"></div>
+            <div class="nail leopard tall"></div>
+            <div class="nail leopard"></div>
+            <div class="nail leopard short"></div>
+          </div>
+          <p class="sname">Leopard</p>
+          <p class="sdesc">הדפס נמר</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Silver Chrome', this)">
+          <div class="nail-preview">
+            <div class="nail silver"></div>
+            <div class="nail silver"></div>
+            <div class="nail silver tall"></div>
+            <div class="nail silver"></div>
+            <div class="nail silver short"></div>
+          </div>
+          <p class="sname">Silver Chrome</p>
+          <p class="sdesc">כסף מטאלי</p>
+        </div>
+
+        <div class="style-card-new" onclick="selectStyle('Geometric Lines', this)">
+          <div class="nail-preview">
+            <div class="nail geo"></div>
+            <div class="nail geo"></div>
+            <div class="nail geo tall"></div>
+            <div class="nail geo"></div>
+            <div class="nail geo short"></div>
+          </div>
+          <p class="sname">Geometric</p>
+          <p class="sdesc">קווים גאומטריים</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="page-action" style="margin-bottom: 40px;">
+      <a href="booking.html" class="btn-action">קבעי תור עכשיו ←</a>
     </div>
   </main>
 

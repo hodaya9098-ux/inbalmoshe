@@ -5,9 +5,17 @@ function toggleMenu() {
 
 // ===== סגנונות =====
 function selectStyle(style, card) {
-  document.querySelectorAll(".style-card").forEach(c => c.classList.remove("selected"));
+  document.querySelectorAll(".style-card, .style-card-new").forEach(c => c.classList.remove("selected"));
   card.classList.add("selected");
-  document.getElementById("chosenStyle").innerText = "נבחר סגנון: " + style;
+
+  const el = document.getElementById("chosenStyle");
+  if (el) el.innerText = "נבחר: " + style;
+
+  const banner = document.getElementById("chosenBanner");
+  if (banner) banner.classList.remove("hidden");
+
+  const s = document.getElementById("styleSelect");
+  if (s) s.value = style;
 }
 
 // ===== מחיר =====

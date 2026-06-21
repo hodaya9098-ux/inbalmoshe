@@ -404,6 +404,32 @@ body {
 }
 .instagram-card h3, .instagram-card p { color: #fff !important; }
 
+.calc-subtitle { color:#888; font-size:0.9rem; margin-bottom:16px; text-align:center; }
+.calc-group { margin-bottom:18px; }
+.calc-group-title { font-weight:700; color:#ff8fab; font-size:0.95rem; margin-bottom:8px; padding-bottom:4px; border-bottom:2px solid #ffe0eb; }
+.calc-item {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:10px; cursor:pointer;
+  transition:background 0.15s; margin-bottom:4px;
+}
+.calc-item:hover { background:#fff5f9; }
+.calc-item input[type="checkbox"] { width:18px; height:18px; accent-color:#e75480; cursor:pointer; flex-shrink:0; }
+.calc-item span:nth-child(2) { flex:1; font-size:0.95rem; }
+.calc-price { font-weight:700; color:#e75480; font-size:0.9rem; white-space:nowrap; }
+.calc-total-box {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 20px; border-radius:14px; background:#f5f5f5;
+  font-weight:700; font-size:1.1rem; margin:16px 0 12px;
+  transition:all 0.3s;
+}
+.calc-total-num { font-size:1.4rem; }
+.calc-reset-btn {
+  background:none; border:2px solid #ffb3c6; color:#ff8fab;
+  padding:8px 20px; border-radius:20px; cursor:pointer;
+  font-size:0.9rem; font-weight:600; transition:all 0.2s; width:100%;
+}
+.calc-reset-btn:hover { background:#fff0f5; }
+
 .color-swatches-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));

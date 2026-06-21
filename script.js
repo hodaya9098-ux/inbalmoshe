@@ -25,14 +25,25 @@ const services = [
   { name: "בניית ציפורניים", price: 180 }
 ];
 
-function calcPrice() {
-  const select = document.getElementById("serviceType");
-  const text = select.options[select.selectedIndex].text;
-  const service = services.find(s => text.includes(s.name));
-  document.getElementById("result").innerText = service
-    ? `המחיר המשוער לשירות "${service.name}" הוא ${service.price} ₪`
-    : "בחרי טיפול קודם";
+function calcTotal() {
+  const checkboxes = document.querySelectorAll('.calc-item input[type="checkbox"]:checked');
+  let total = 0;
+  checkboxes.forEach(cb => total += parseInt(cb.value));
+  const el = document.getElementById("totalAmount");
+  const box = document.getElementById("totalBox");
+  if (el) {
+    el.textContent = total + " ₪";
+    box.style.background = total > 0 ? "linear-gradient(135deg,#ff8fab,#e75480)" : "#f5f5f5";
+    box.style.color = total > 0 ? "#fff" : "#333";
+  }
 }
+
+function resetCalc() {
+  document.querySelectorAll('.calc-item input[type="checkbox"]').forEach(cb => cb.checked = false);
+  calcTotal();
+}
+
+function calcPrice() {}
 
 // ===== יומן - נתונים =====
 const HOURS = ["09:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00"];

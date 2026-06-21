@@ -157,19 +157,22 @@ function goToStep(n) {
   document.getElementById("step" + n).classList.remove("hidden");
 }
 
+const COSMETICIAN_PHONE = "972503927121";
+
 function sendAppointment(e) {
   e.preventDefault();
-  const name        = document.getElementById("name").value.trim();
-  const service     = document.getElementById("serviceSelect") ? document.getElementById("serviceSelect").value : "";
-  const style       = document.getElementById("styleSelect")  ? document.getElementById("styleSelect").value  : "";
-  const confirmMsg  = document.getElementById("confirmMsg");
+  const name    = document.getElementById("name").value.trim();
+  const phone   = document.getElementById("phone").value.trim();
+  const service = document.getElementById("serviceSelect") ? document.getElementById("serviceSelect").value : "";
+  const style   = document.getElementById("styleSelect")   ? document.getElementById("styleSelect").value  : "";
+  const note    = document.getElementById("note")          ? document.getElementById("note").value.trim()  : "";
+  const confirmMsg = document.getElementById("confirmMsg");
 
   if (!selectedDate || !selectedTime) {
     confirmMsg.className = "confirm-msg error";
     confirmMsg.innerText = "שגיאה: לא נבחר תאריך ושעה";
     return;
   }
-
   if (!service) {
     confirmMsg.className = "confirm-msg error";
     confirmMsg.innerText = "אנא בחרי סוג טיפול";
@@ -178,15 +181,30 @@ function sendAppointment(e) {
 
   bookSlot(selectedDate, selectedTime);
 
-  const serviceTxt = `<br>🛠️ טיפול: <strong>${service}</strong>`;
-  const styleTxt   = style ? `<br>💅 עיצוב: <strong>${style}</strong>` : "";
+  // בניית הודעת וואטסאפ
+  let msg = `שלום! רציתי לאשר תור 💅\n`;
+  msg += `━━━━━━━━━━━━━━\n`;
+  msg += `👤 שם: ${name}\n`;
+  if (phone) msg += `📞 טלפון: ${phone}\n`;
+  msg += `📅 תאריך: ${toHebrewDate(selectedDate)}\n`;
+  msg += `🕐 שעה: ${selectedTime}\n`;
+  msg += `🛠️ טיפול: ${service}\n`;
+  if (style) msg += `💅 עיצוב: ${style}\n`;
+  if (note)  msg += `📝 הערות: ${note}\n`;
+  msg += `━━━━━━━━━━━━━━`;
 
+  const waURL = `https://wa.me/${COSMETICIAN_PHONE}?text=${encodeURIComponent(msg)}`;
+
+  // הצגת אישור
   confirmMsg.className = "confirm-msg";
-  confirmMsg.innerHTML = `✅ תודה <strong>${name}</strong>!<br>📅 התור נקבע ל-<strong>${toHebrewDate(selectedDate)}</strong> בשעה <strong>${selectedTime}</strong>${serviceTxt}${styleTxt}`;
+  confirmMsg.innerHTML = `✅ מעולה <strong>${name}</strong>! עוד שנייה תועברי לוואטסאפ לאישור התור 💬`;
 
   document.getElementById("appointmentForm").reset();
   selectedDate = null;
   selectedTime = null;
+
+  // פתיחת וואטסאפ אחרי שנייה
+  setTimeout(() => window.open(waURL, "_blank"), 1200);
 
   setTimeout(() => {
     confirmMsg.innerHTML = "";

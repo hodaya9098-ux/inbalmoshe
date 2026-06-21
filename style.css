@@ -40,14 +40,35 @@ body {
 
 /* ===== HOME PAGE ===== */
 .home-header {
-  background: linear-gradient(135deg, #ffb6c1, #ff8fab);
-  padding: 70px 20px 50px;
+  background: linear-gradient(135deg, #1a1a2e, #2d1b3d, #1a1a2e);
+  padding: 40px 20px 50px;
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.home-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,143,171,0.15) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.home-header h1 { font-size: 3rem; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-.home-header p  { font-size: 1.2rem; opacity: 0.95; }
+.home-logo-img {
+  width: 280px;
+  max-width: 80vw;
+  display: block;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 8px 30px rgba(255,143,171,0.4));
+  animation: floatImg 4s ease-in-out infinite;
+}
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.home-header h1 { font-size: 2.4rem; margin-bottom: 8px; color: #fff; text-shadow: 0 2px 20px rgba(255,143,171,0.6); }
+.home-header p  { font-size: 1.1rem; opacity: 0.9; color: #ffb3c6; }
 
 .home-main { flex: 1; }
 

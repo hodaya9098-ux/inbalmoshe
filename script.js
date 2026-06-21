@@ -296,14 +296,15 @@ function sendAppointment(e) {
 
   const waURL = `https://wa.me/${COSMETICIAN_PHONE}?text=${encodeURIComponent(msg)}`;
 
+  // פתח WhatsApp מיד - לפני כל עיכוב כדי שהדפדפן לא יחסום
+  window.open(waURL, "_blank");
+
   confirmMsg.className = "confirm-msg";
-  confirmMsg.innerHTML = `✅ מעולה <strong>${name}</strong>! עוד שנייה תועברי לוואטסאפ לאישור התור 💬`;
+  confirmMsg.innerHTML = `✅ מעולה <strong>${name}</strong>! WhatsApp נפתח - שלחי את ההודעה לאישור התור 💬`;
 
   document.getElementById("appointmentForm").reset();
   selectedDate = null;
   selectedTime = null;
-
-  setTimeout(() => window.open(waURL, "_blank"), 1200);
 
   setTimeout(() => {
     confirmMsg.innerHTML = "";
